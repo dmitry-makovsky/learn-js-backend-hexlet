@@ -52,3 +52,8 @@
 // import apply from './apply';
 // console.log(apply(2, Math.sqrt, 16))//.toBe(2);
 // console.log(apply(1, v => v ** 2, 3))//.toBe(9);
+
+
+// import reverse from './reverse';
+
+// console.log(reverse('qwerty'));
