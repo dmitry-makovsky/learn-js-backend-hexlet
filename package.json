@@ -9,5 +9,8 @@
         ],
         "sourceMaps": true,
         "retainLines": true
+    },
+    "dependencies": {
+        "js-beautify": "^1.9.1"
     }
 }
