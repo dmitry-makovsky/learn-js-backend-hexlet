@@ -57,3 +57,28 @@
 // import reverse from './reverse';
 
 // console.log(reverse('qwerty'));
+
+// // flip function test
+import flip from './flip';
+
+const sub = (a, b) => a - b;
+const reverseSub = flip(sub);
+
+console.log(sub(5, 3));
+// 2
+console.log(reverseSub(5, 3));
+// -2
+
+// exponentiation
+const wop = flip(Math.pow);
+
+console.log(Math.pow(1, 2));
+// 1
+console.log(wop(1, 2));
+// 2
+
+console.log(Math.pow(3, 2));
+// 9
+
+console.log(wop(3, 2));
+// 8
