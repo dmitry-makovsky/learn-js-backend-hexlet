@@ -89,15 +89,32 @@
 // Реализуйте и экспортируйте по умолчанию функцию partialApply. 
 // Эта функция умеет частично применять один (второй) аргумент у переданной функции:
 
-import partialApply from './partialApply';
+// import partialApply from './partialApply';
 
-const pow = (a, b) => a ** b;
-const f1 = partialApply(pow, 2);
-console.log(f1(1));
-// => 1
-console.log(f1(10));
-// => 100
+// const pow = (a, b) => a ** b;
+// const f1 = partialApply(pow, 2);
+// console.log(f1(1));
+// // => 1
+// console.log(f1(10));
+// // => 100
 
-const f2 = partialApply((a, b) => a * b, 5);
-console.log(f2(2)); // => 10
-console.log(f2(5)); // => 25
+// const f2 = partialApply((a, b) => a * b, 5);
+// console.log(f2(2)); // => 10
+// console.log(f2(5)); // => 25
+
+// // Carring test
+// const greeting = () => () => () => () => console.log('Hey!')
+// greeting()()()();
+
+
+// // // logic function test
+import {
+    If,
+    True,
+    False
+} from './logic';
+
+console.log(If(True)('fo')('bar'))//.toBe('fo');
+console.log(If(False)('foo')('ba'))//.toBe('ba');
+console.log(True()())//.toBeUndefined();
+console.log(False()())//.toBeUndefined();
