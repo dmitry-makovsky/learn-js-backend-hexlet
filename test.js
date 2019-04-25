@@ -58,27 +58,46 @@
 
 // console.log(reverse('qwerty'));
 
-// // flip function test
-import flip from './flip';
+// // // flip function test
+// import flip from './flip';
 
-const sub = (a, b) => a - b;
-const reverseSub = flip(sub);
+// const sub = (a, b) => a - b;
+// const reverseSub = flip(sub);
 
-console.log(sub(5, 3));
-// 2
-console.log(reverseSub(5, 3));
-// -2
+// console.log(sub(5, 3));
+// // 2
+// console.log(reverseSub(5, 3));
+// // -2
 
-// exponentiation
-const wop = flip(Math.pow);
+// // exponentiation
+// const wop = flip(Math.pow);
 
-console.log(Math.pow(1, 2));
-// 1
-console.log(wop(1, 2));
-// 2
+// console.log(Math.pow(1, 2));
+// // 1
+// console.log(wop(1, 2));
+// // 2
 
-console.log(Math.pow(3, 2));
-// 9
+// console.log(Math.pow(3, 2));
+// // 9
 
-console.log(wop(3, 2));
-// 8
+// console.log(wop(3, 2));
+// // 8
+
+
+// // // partialApply function test
+// partialApply.js
+// Реализуйте и экспортируйте по умолчанию функцию partialApply. 
+// Эта функция умеет частично применять один (второй) аргумент у переданной функции:
+
+import partialApply from './partialApply';
+
+const pow = (a, b) => a ** b;
+const f1 = partialApply(pow, 2);
+console.log(f1(1));
+// => 1
+console.log(f1(10));
+// => 100
+
+const f2 = partialApply((a, b) => a * b, 5);
+console.log(f2(2)); // => 10
+console.log(f2(5)); // => 25
