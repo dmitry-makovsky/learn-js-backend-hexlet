@@ -11,6 +11,7 @@
         "retainLines": true
     },
     "dependencies": {
+        "hexlet-points": "^1.0.7",
         "js-beautify": "^1.9.1"
     }
 }

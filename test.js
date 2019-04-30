@@ -107,14 +107,45 @@
 // greeting()()()();
 
 
-// // // logic function test
-import {
-    If,
-    True,
-    False
-} from './logic';
+// // // // logic function test
+// import {
+//     If,
+//     True,
+//     False
+// } from './logic';
 
-console.log(If(True)('fo')('bar'))//.toBe('fo');
-console.log(If(False)('foo')('ba'))//.toBe('ba');
-console.log(True()())//.toBeUndefined();
-console.log(False()())//.toBeUndefined();
+// console.log(If(True)('fo')('bar'))//.toBe('fo');
+// console.log(If(False)('foo')('ba'))//.toBe('ba');
+// console.log(True()())//.toBeUndefined();
+// console.log(False()())//.toBeUndefined();
+
+// Points quadrant function test
+import {
+    getQuadrant,
+    getSymmetricalPoint,
+    calculateDistance
+} from "./points";
+import {
+    makePoint,
+    getX,
+    getY,
+    toString
+} from 'hexlet-points'; // eslint-disable-line
+
+
+const point = makePoint(1, 5);
+console.log(getQuadrant(point));
+// 1
+
+console.log(getQuadrant(makePoint(3, -3)));
+// 4
+
+console.log(getQuadrant(makePoint(-3, 10))) //toBe(2);
+console.log(getQuadrant(makePoint(-2, -5))) //toBe(3);
+console.log(getQuadrant(makePoint(4, -1))) //toBe(4);
+const point = makePoint(0, 7);
+console.log(getQuadrant(point)); // null
+console.log(getQuadrant(makePoint(2, 0))); // null
+
+console.log(toString(getSymmetricalPoint(makePoint(-10, -10)))) //.toBe(toString(makePoint(10, 10)));
+console.log(calculateDistance(makePoint(-2, -3), makePoint(-4, 4))) //.toBeCloseTo(7.28, 2)
