@@ -119,33 +119,72 @@
 // console.log(True()())//.toBeUndefined();
 // console.log(False()())//.toBeUndefined();
 
-// Points quadrant function test
-import {
-    getQuadrant,
-    getSymmetricalPoint,
-    calculateDistance
-} from "./points";
-import {
-    makePoint,
-    getX,
-    getY,
-    toString
-} from 'hexlet-points'; // eslint-disable-line
+// // Points quadrant function test
+// import {
+//     getQuadrant,
+//     getSymmetricalPoint,
+//     calculateDistance
+// } from "./points";
+// import {
+//     makePoint,
+//     getX,
+//     getY,
+//     toString
+// } from 'hexlet-points'; // eslint-disable-line
 
 
-const point = makePoint(1, 5);
-console.log(getQuadrant(point));
-// 1
+// const point = makePoint(1, 5);
+// console.log(getQuadrant(point));
+// // 1
 
-console.log(getQuadrant(makePoint(3, -3)));
-// 4
+// console.log(getQuadrant(makePoint(3, -3)));
+// // 4
 
-console.log(getQuadrant(makePoint(-3, 10))) //toBe(2);
-console.log(getQuadrant(makePoint(-2, -5))) //toBe(3);
-console.log(getQuadrant(makePoint(4, -1))) //toBe(4);
-const point = makePoint(0, 7);
-console.log(getQuadrant(point)); // null
-console.log(getQuadrant(makePoint(2, 0))); // null
+// console.log(getQuadrant(makePoint(-3, 10))) //toBe(2);
+// console.log(getQuadrant(makePoint(-2, -5))) //toBe(3);
+// console.log(getQuadrant(makePoint(4, -1))) //toBe(4);
+// const point = makePoint(0, 7);
+// console.log(getQuadrant(point)); // null
+// console.log(getQuadrant(makePoint(2, 0))); // null
 
-console.log(toString(getSymmetricalPoint(makePoint(-10, -10)))) //.toBe(toString(makePoint(10, 10)));
-console.log(calculateDistance(makePoint(-2, -3), makePoint(-4, 4))) //.toBeCloseTo(7.28, 2)
+// console.log(toString(getSymmetricalPoint(makePoint(-10, -10)))) //.toBe(toString(makePoint(10, 10)));
+// console.log(calculateDistance(makePoint(-2, -3), makePoint(-4, 4))) //.toBeCloseTo(7.28, 2)
+
+
+// // Reverse Pair function test
+// import { cons, car, cdr, toString } from 'hexlet-pairs';
+// import reversePair from './reversePair';
+
+// const pair = cons('one', 'two');
+// console.log(toString(reversePair(pair))); // ('two', 'one')
+
+// // Sum of pairs function test
+// import { cons, car, cdr, toString } from 'hexlet-pairs';
+// import sumOfPairs from './sumOfPairs';
+
+// const pair1 = cons(4, 10);
+// const pair2 = cons(100, 0);
+// console.log(toString(sumOfPairs(pair1, pair2))); // (104, 10)
+
+// // Find Primitive Box function test
+// import { cons, car, cdr, toString } from 'hexlet-pairs';
+// import {findPrimitiveBox} from './findPrimitiveBox';
+
+// const pair = cons(
+//   null,
+//   cons('one', 'two'),
+// );
+// console.log(toString(findPrimitiveBox(pair))); // ('one', 'two')
+
+
+// const pair2 = cons(
+//   cons(null, cons(1, 5)),
+//   null,
+// );
+// console.log(toString(findPrimitiveBox(pair2))); // (1, 5))
+
+
+// const pair1 = cons(
+//     cons(1, cons(cons(true, 5), null)),
+//     8,
+//   );
