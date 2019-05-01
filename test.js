@@ -188,3 +188,23 @@
 //     cons(1, cons(cons(true, 5), null)),
 //     8,
 //   );
+
+
+// // Segments function test
+import { makePoint, getX, getY, toString as pointToString } from 'hexlet-points';
+import { makeSegment, startSegment, endSegment, segmentToString, midpointSegment } from './segments';
+
+// не важно, чем является segment с точки зрения реализации, главное, что с ним можно
+// работать используя функции для работы с сегментами
+const segment = makeSegment(makePoint(1, 2), makePoint(-4, -2));
+console.log(segmentToString(segment)); // [(1, 2), (-4, -2)]
+
+const point1 = startSegment(segment);
+console.log(pointToString(point1)); // (1, 2)
+
+const point2 = endSegment(segment);
+console.log(pointToString(point2)); // (-4, -2)
+
+pointToString(startSegment(segment)) === pointToString(makePoint(1, 2)); // true
+
+pointToString(midpointSegment(segment)); // (-1.5, 0)
