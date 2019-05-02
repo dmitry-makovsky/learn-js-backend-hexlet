@@ -211,45 +211,62 @@
 
 
 
-// // // Rectangle function test
-// Создание прямоугольника:
-// p - левая верхняя точка
-// 5 - ширина
-// 4 - высота
-//
-// p    5
-// -----------
-// |         |
-// |         | 4
-// |         |
-// -----------
-import { makePoint, getX, getY, quadrant, toString as pointToString } from 'hexlet-points';
-import {
-    makeRectangle,
-    getStartPoint,
-    getWidth,
-    getHeight,
-    square,
-    perimeter,
-    containsTheOrigin,
-} from './rectangles';
+// // // // Rectangle function test
+// // Создание прямоугольника:
+// // p - левая верхняя точка
+// // 5 - ширина
+// // 4 - высота
+// //
+// // p    5
+// // -----------
+// // |         |
+// // |         | 4
+// // |         |
+// // -----------
+// import { makePoint, getX, getY, quadrant, toString as pointToString } from 'hexlet-points';
+// import {
+//     makeRectangle,
+//     getStartPoint,
+//     getWidth,
+//     getHeight,
+//     square,
+//     perimeter,
+//     containsTheOrigin,
+// } from './rectangles';
 
-const p = makePoint(0, 1);
-const rectangle = makeRectangle(p, 5, 4);
+// const p = makePoint(0, 1);
+// const rectangle = makeRectangle(p, 5, 4);
 
-// // Вычисление площади прямоугольника
-// console.log(square(rectangle));
-// // 20;
+// // // Вычисление площади прямоугольника
+// // console.log(square(rectangle));
+// // // 20;
 
-// console.log(perimeter(rectangle));
-// // 18
+// // console.log(perimeter(rectangle));
+// // // 18
 
-console.log(containsTheOrigin(rectangle));
-// false
+// console.log(containsTheOrigin(rectangle));
+// // false
 
-const rectangle02 = makeRectangle(makePoint(-4, 3), 5, 4);
-console.log(containsTheOrigin(rectangle02));
-// true
+// const rectangle02 = makeRectangle(makePoint(-4, 3), 5, 4);
+// console.log(containsTheOrigin(rectangle02));
+// // true
 
-console.log(containsTheOrigin(makeRectangle(makePoint(-4, 4), 5, 2))); // false
-console.log(containsTheOrigin(makeRectangle(makePoint(-4, 3), 2, 8))); // false
+// console.log(containsTheOrigin(makeRectangle(makePoint(-4, 4), 5, 2))); // false
+// console.log(containsTheOrigin(makeRectangle(makePoint(-4, 3), 2, 8))); // false
+
+
+// Pairs function test
+import { cons, car, cdr } from './pairs';
+
+const pair = cons(5, 3);
+// const pair = f => f(5, 3);
+
+const pair1 = cons(10, 100);
+
+const actualCar = car(pair1);
+console.log(actualCar)
+// 10
+
+const actualCdr = cdr(pair1);
+console.log(actualCdr)
+// 100
