@@ -255,18 +255,18 @@
 // console.log(containsTheOrigin(makeRectangle(makePoint(-4, 3), 2, 8))); // false
 
 
-// Pairs function test
-import { cons, car, cdr } from './pairs';
+// // Pairs function test
+// import { cons, car, cdr } from './pairs';
 
-const pair = cons(5, 3);
-// const pair = f => f(5, 3);
+// const pair = cons(5, 3);
+// // const pair = f => f(5, 3);
 
-const pair1 = cons(10, 100);
+// const pair1 = cons(10, 100);
 
-const actualCar = car(pair1);
-console.log(actualCar)
-// 10
+// const actualCar = car(pair1);
+// console.log(actualCar)
+// // 10
 
-const actualCdr = cdr(pair1);
-console.log(actualCdr)
-// 100
+// const actualCdr = cdr(pair1);
+// console.log(actualCdr)
+// // 100
