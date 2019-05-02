@@ -190,21 +190,66 @@
 //   );
 
 
-// // Segments function test
-import { makePoint, getX, getY, toString as pointToString } from 'hexlet-points';
-import { makeSegment, startSegment, endSegment, segmentToString, midpointSegment } from './segments';
+// // // Segments function test
+// import { makePoint, getX, getY, toString as pointToString } from 'hexlet-points';
+// import { makeSegment, startSegment, endSegment, segmentToString, midpointSegment } from './segments';
 
-// не важно, чем является segment с точки зрения реализации, главное, что с ним можно
-// работать используя функции для работы с сегментами
-const segment = makeSegment(makePoint(1, 2), makePoint(-4, -2));
-console.log(segmentToString(segment)); // [(1, 2), (-4, -2)]
+// // не важно, чем является segment с точки зрения реализации, главное, что с ним можно
+// // работать используя функции для работы с сегментами
+// const segment = makeSegment(makePoint(1, 2), makePoint(-4, -2));
+// console.log(segmentToString(segment)); // [(1, 2), (-4, -2)]
 
-const point1 = startSegment(segment);
-console.log(pointToString(point1)); // (1, 2)
+// const point1 = startSegment(segment);
+// console.log(pointToString(point1)); // (1, 2)
 
-const point2 = endSegment(segment);
-console.log(pointToString(point2)); // (-4, -2)
+// const point2 = endSegment(segment);
+// console.log(pointToString(point2)); // (-4, -2)
 
-pointToString(startSegment(segment)) === pointToString(makePoint(1, 2)); // true
+// pointToString(startSegment(segment)) === pointToString(makePoint(1, 2)); // true
 
-pointToString(midpointSegment(segment)); // (-1.5, 0)
+// pointToString(midpointSegment(segment)); // (-1.5, 0)
+
+
+
+// // // Rectangle function test
+// Создание прямоугольника:
+// p - левая верхняя точка
+// 5 - ширина
+// 4 - высота
+//
+// p    5
+// -----------
+// |         |
+// |         | 4
+// |         |
+// -----------
+import { makePoint, getX, getY, quadrant, toString as pointToString } from 'hexlet-points';
+import {
+    makeRectangle,
+    getStartPoint,
+    getWidth,
+    getHeight,
+    square,
+    perimeter,
+    containsTheOrigin,
+} from './rectangles';
+
+const p = makePoint(0, 1);
+const rectangle = makeRectangle(p, 5, 4);
+
+// // Вычисление площади прямоугольника
+// console.log(square(rectangle));
+// // 20;
+
+// console.log(perimeter(rectangle));
+// // 18
+
+console.log(containsTheOrigin(rectangle));
+// false
+
+const rectangle02 = makeRectangle(makePoint(-4, 3), 5, 4);
+console.log(containsTheOrigin(rectangle02));
+// true
+
+console.log(containsTheOrigin(makeRectangle(makePoint(-4, 4), 5, 2))); // false
+console.log(containsTheOrigin(makeRectangle(makePoint(-4, 3), 2, 8))); // false
