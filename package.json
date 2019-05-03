@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "hexlet-pairs": "^1.0.8",
+        "hexlet-pairs-data": "^1.0.8",
         "hexlet-points": "^1.0.7",
         "js-beautify": "^1.9.1"
     }

@@ -270,3 +270,21 @@
 // const actualCdr = cdr(pair1);
 // console.log(actualCdr)
 // // 100
+
+
+// // List function test
+import { l, toString as listToString } from 'hexlet-pairs-data';
+import { has, reverse, concat } from './list';
+
+const numbers = l(3, 4, 5, 8);
+console.log(has(numbers, 8)); // true
+console.log(has(numbers, 0)); // false
+
+const numbers2 = l(3, 4, 5);
+console.log(listToString(reverse(numbers2)));
+// (5, 4, 3)
+
+const numbers4 = l(3, 4, 5, 8);
+const numbers5 = l(3, 2, 9);
+console.log(listToString(concat(numbers4, numbers5)));
+// (3, 4, 5, 8, 3, 2, 9)
