@@ -272,19 +272,56 @@
 // // 100
 
 
-// // List function test
-import { l, toString as listToString } from 'hexlet-pairs-data';
-import { has, reverse, concat } from './list';
+// // // List function test
+// import { l, toString as listToString } from 'hexlet-pairs-data';
+// import { has, reverse, concat } from './list';
 
-const numbers = l(3, 4, 5, 8);
-console.log(has(numbers, 8)); // true
-console.log(has(numbers, 0)); // false
+// const numbers = l(3, 4, 5, 8);
+// console.log(has(numbers, 8)); // true
+// console.log(has(numbers, 0)); // false
 
-const numbers2 = l(3, 4, 5);
-console.log(listToString(reverse(numbers2)));
-// (5, 4, 3)
+// const numbers2 = l(3, 4, 5);
+// console.log(listToString(reverse(numbers2)));
+// // (5, 4, 3)
 
-const numbers4 = l(3, 4, 5, 8);
-const numbers5 = l(3, 2, 9);
-console.log(listToString(concat(numbers4, numbers5)));
-// (3, 4, 5, 8, 3, 2, 9)
+// const numbers4 = l(3, 4, 5, 8);
+// const numbers5 = l(3, 2, 9);
+// console.log(listToString(concat(numbers4, numbers5)));
+// // (3, 4, 5, 8, 3, 2, 9)
+
+
+// HTML-Tags function test
+import { make, append, toString, node, getName, getValue } from './html-tags';
+
+import { l, isEmpty, head, tail, cons as consList, toString as listToString } from 'hexlet-pairs-data';
+
+// Создаем новый html-список
+const dom1 = make();
+
+// Создаем тег и сразу добавляем его в html
+const dom2 = append(dom1, node('h1', 'hello, world'));
+// Еще раз
+const dom3 = append(dom2, node('h2', 'header2'));
+
+// Создаем новый тег
+const tag = node('h3', 'header3');
+// Добавляем созданный тег в html-список
+const dom = append(dom3, tag);
+
+// Преобразуем html-список в строчку
+console.log(listToString(dom));
+console.log(toString(dom));
+
+
+// => <h1>hello, world</h1><h2>header2</h2><h3>header3</h3>
+
+// // Пример без создания промежуточных переменных
+// toString(append(make(), node('p', 'this is Sparta!')));
+// // <p>this is Sparta!</p>
+
+// const tag = node('div', 'what is love?');
+
+
+
+// console.log(getName(tag));// => div
+// console.log(getValue(tag)); // => what is love?
