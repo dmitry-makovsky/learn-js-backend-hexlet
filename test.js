@@ -329,27 +329,27 @@
 
 
 // // HTML-Tags-two function test
-import {
-    make,
-    append,
-    node,
-    getValue,
-    is,
-    toString as htmlToString,
-} from 'hexlet-html-tags';
-import { map, mirror, b2p } from './html-tags-two';
+// import {
+//     make,
+//     append,
+//     node,
+//     getValue,
+//     is,
+//     toString as htmlToString,
+// } from 'hexlet-html-tags';
+// import { map, mirror, b2p } from './html-tags-two';
 
-let dom;
+// let dom;
 
-const dom1 = make();
-const dom2 = append(dom1, node('h1', 'scheme'));
-const dom3 = append(dom2, node('p', 'is a lisp'));
+// const dom1 = make();
+// const dom2 = append(dom1, node('h1', 'scheme'));
+// const dom3 = append(dom2, node('p', 'is a lisp'));
 
-const dom4 = append(dom3, node('h1', 'haskell'));
-const dom5 = append(dom4, node('p', 'is a functional language'));
+// const dom4 = append(dom3, node('h1', 'haskell'));
+// const dom5 = append(dom4, node('p', 'is a functional language'));
 
-const dom6 = append(dom5, node('h1', 'prolog'));
-dom = append(dom6, node('p', 'is about logic'));
+// const dom6 = append(dom5, node('h1', 'prolog'));
+// dom = append(dom6, node('p', 'is about logic'));
 
 // // b2p
 // const domb2p = append(make(), node('blockquote', 'quote'));
@@ -383,5 +383,51 @@ dom = append(dom6, node('p', 'is about logic'));
 // console.log(htmlToString(processedDom));
 // // '<h2>scheme</h2><p>is a lisp</p><h2>haskell</h2><p>is a functional language</p><h2>prolog</h2><p>is about logic</p>';
 
-console.log(htmlToString(mirror(dom)))
+// console.log(htmlToString(mirror(dom)))
 //'<h1>emehcs</h1><p>psil a si</p><h1>lleksah</h1><p>egaugnal lanoitcnuf a si</p><h1>golorp</h1><p>cigol tuoba si</p>';
+
+
+
+// // HTML-Tags-three function test
+import { l, toString as listToString } from 'hexlet-pairs-data';
+
+import { make, append, node, is, toString as htmlToString, } from 'hexlet-html-tags';
+
+import { filter, quotes, removeHeaders } from './html-tags-three';
+
+let dom;
+
+const dom1 = make();
+const dom2 = append(dom1, node('h1', 'scheme'));
+const dom3 = append(dom2, node('p', 'is a lisp'));
+
+const dom4 = append(dom3, node('h1', 'haskell'));
+const dom5 = append(dom4, node('p', 'is a functional language'));
+
+const dom6 = append(dom5, node('h1', 'prolog'));
+dom = append(dom6, node('p', 'is about logic'));
+
+// // #removeHeaders
+// const processedDom = removeHeaders(dom);
+
+// console.log(htmlToString(processedDom))
+// //'<p>is a lisp</p><p>is a functional language</p><p>is about logic</p>'
+
+
+// // // #filter
+// const processedDom = filter(element => is('h1', element), dom);
+// console.log(1, htmlToString(processedDom))
+// //'<h1>scheme</h1><h1>haskell</h1><h1>prolog</h1>';
+
+// const processedDom2 = filter(element => is('p', element), dom);
+// console.log(2, htmlToString(processedDom2))
+// //'<p>is a lisp</p><p>is a functional language</p><p>is about logic</p>';
+
+// console.log(htmlToString(make()))
+// //.toBe('');
+
+// // #quotes
+const dom99 = append(dom, node('blockquote', 'live is life'));
+const dom88 = append(dom99, node('blockquote', 'i am sexy, and i know it'));
+
+console.log(listToString(quotes(dom88)))// .toBe(listToString(l('i am sexy, and i know it', 'live is life')));
