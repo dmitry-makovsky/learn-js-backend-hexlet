@@ -11,6 +11,7 @@
         "retainLines": true
     },
     "dependencies": {
+        "hexlet-html-tags": "^0.4.0",
         "hexlet-pairs": "^1.0.8",
         "hexlet-pairs-data": "^1.0.8",
         "hexlet-points": "^1.0.7",

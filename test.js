@@ -290,27 +290,27 @@
 // // (3, 4, 5, 8, 3, 2, 9)
 
 
-// HTML-Tags function test
-import { make, append, toString, node, getName, getValue } from './html-tags';
+// // HTML-Tags function test
+// import { make, append, toString, node, getName, getValue } from './html-tags';
 
-import { l, isEmpty, head, tail, cons as consList, toString as listToString } from 'hexlet-pairs-data';
+// import { l, isEmpty, head, tail, cons as consList, toString as listToString } from 'hexlet-pairs-data';
 
-// Создаем новый html-список
-const dom1 = make();
+// // Создаем новый html-список
+// const dom1 = make();
 
-// Создаем тег и сразу добавляем его в html
-const dom2 = append(dom1, node('h1', 'hello, world'));
-// Еще раз
-const dom3 = append(dom2, node('h2', 'header2'));
+// // Создаем тег и сразу добавляем его в html
+// const dom2 = append(dom1, node('h1', 'hello, world'));
+// // Еще раз
+// const dom3 = append(dom2, node('h2', 'header2'));
 
-// Создаем новый тег
-const tag = node('h3', 'header3');
-// Добавляем созданный тег в html-список
-const dom = append(dom3, tag);
+// // Создаем новый тег
+// const tag = node('h3', 'header3');
+// // Добавляем созданный тег в html-список
+// const dom = append(dom3, tag);
 
-// Преобразуем html-список в строчку
-console.log(listToString(dom));
-console.log(toString(dom));
+// // Преобразуем html-список в строчку
+// console.log(listToString(dom));
+// console.log(toString(dom));
 
 
 // => <h1>hello, world</h1><h2>header2</h2><h3>header3</h3>
@@ -325,3 +325,63 @@ console.log(toString(dom));
 
 // console.log(getName(tag));// => div
 // console.log(getValue(tag)); // => what is love?
+
+
+
+// // HTML-Tags-two function test
+import {
+    make,
+    append,
+    node,
+    getValue,
+    is,
+    toString as htmlToString,
+} from 'hexlet-html-tags';
+import { map, mirror, b2p } from './html-tags-two';
+
+let dom;
+
+const dom1 = make();
+const dom2 = append(dom1, node('h1', 'scheme'));
+const dom3 = append(dom2, node('p', 'is a lisp'));
+
+const dom4 = append(dom3, node('h1', 'haskell'));
+const dom5 = append(dom4, node('p', 'is a functional language'));
+
+const dom6 = append(dom5, node('h1', 'prolog'));
+dom = append(dom6, node('p', 'is about logic'));
+
+// // b2p
+// const domb2p = append(make(), node('blockquote', 'quote'));
+// const processedDom = b2p(domb2p);
+
+// const result = '<p>quote</p>';
+// console.log(htmlToString(processedDom)); //'<p>quote</p>'
+
+// // '#mapAsB2p'
+// const domMapAsB2p = append(make(), node('blockquote', 'quote'));
+// const processedDom = map((element) => {
+//     if (is('blockquote', element)) {
+//         return node('p', getValue(element));
+//     }
+//     return element;
+// }, domMapAsB2p);
+
+// // const result = '<p>quote</p>';
+// // console.log(htmlToString(processedDom)); //'<p>quote</p>'
+
+// const result = map(() => {}, make());
+// console.log(htmlToString(result)); // ''
+
+// const processedDom = map((element) => {
+//     if (is('h1', element)) {
+//         return node('h2', getValue(element));
+//     }
+//     return element;
+// }, dom);
+
+// console.log(htmlToString(processedDom));
+// // '<h2>scheme</h2><p>is a lisp</p><h2>haskell</h2><p>is a functional language</p><h2>prolog</h2><p>is about logic</p>';
+
+console.log(htmlToString(mirror(dom)))
+//'<h1>emehcs</h1><p>psil a si</p><h1>lleksah</h1><p>egaugnal lanoitcnuf a si</p><h1>golorp</h1><p>cigol tuoba si</p>';
