@@ -430,25 +430,44 @@
 // const dom99 = append(dom, node('blockquote', 'live is life'));
 // const dom88 = append(dom99, node('blockquote', 'i am sexy, and i know it'));
 
-// console.log(listToString(quotes(dom88)))// .toBe(listToString(l('i am sexy, and i know it', 'live is life')));
+// // console.log(listToString(quotes(dom88)))// .toBe(listToString(l('i am sexy, and i know it', 'live is life')));
 
-import { make, append, node, getValue, is, } from 'hexlet-html-tags';
+// import { make, append, node, getValue, is, } from 'hexlet-html-tags';
 
-import { reduce, emptyTagsCount, headersCount } from './html-tags-four';
+// import { reduce, emptyTagsCount, headersCount } from './html-tags-four';
 
-// const html1 = append(make(), node('h1', 'header1'));
-// const html2 = append(html1, node('h1', 'header2'));
+// // const html1 = append(make(), node('h1', 'header1'));
+// // const html2 = append(html1, node('h1', 'header2'));
+// // const html3 = append(html2, node('p', 'content'));
+// // console.log(reduce((element, acc) => {
+// //     return is('h1', element) ? acc + 1 : acc;
+// // }, 0, html3)); // 2
+
+// const html1 = make();
+// const html2 = append(html1, node('h1', 'scheme'));
+// const html3 = append(html2, node('p', 'is a lisp'));
+// const html4 = append(html3, node('blockquote', ''));
+// const html5 = append(html4, node('blockquote', ''));
+// const html6 = append(html5, node('blockquote', 'quote'));
+
+// console.log(emptyTagsCount('blockquote', html6));
+// // 2
+
+import { node, append, make, reduce, toString as htmlToString } from 'hexlet-html-tags';
+import { extractHeaders, wordsCount } from './html-tags-five';
+
+// const html1 = append(make(), node('h2', 'header1'));
+// const html2 = append(html1, node('h2', 'header2'));
 // const html3 = append(html2, node('p', 'content'));
-// console.log(reduce((element, acc) => {
-//     return is('h1', element) ? acc + 1 : acc;
-// }, 0, html3)); // 2
+// // => <h2>header1</h2><h2>header2</h2><p>content</p>
 
-const html1 = make();
-const html2 = append(html1, node('h1', 'scheme'));
-const html3 = append(html2, node('p', 'is a lisp'));
-const html4 = append(html3, node('blockquote', ''));
-const html5 = append(html4, node('blockquote', ''));
-const html6 = append(html5, node('blockquote', 'quote'));
+// console.log(htmlToString(extractHeaders(html3)));
+// // => <p>header1</p><p>header2</p>
 
-console.log(emptyTagsCount('blockquote', html6));
-// 2
+const html1 = append(make(), node('h2', 'header1 lisp'));
+const html2 = append(html1, node('p', 'content'));
+const html3 = append(html2, node('h2', 'lisp header2 lisp'));
+const html4 = append(html3, node('p', 'content lisp'));
+
+console.log(wordsCount('h2', 'lisp', html4));
+// 3
