@@ -389,23 +389,23 @@
 
 
 // // HTML-Tags-three function test
-import { l, toString as listToString } from 'hexlet-pairs-data';
+// import { l, toString as listToString } from 'hexlet-pairs-data';
 
-import { make, append, node, is, toString as htmlToString, } from 'hexlet-html-tags';
+// import { make, append, node, is, toString as htmlToString, } from 'hexlet-html-tags';
 
-import { filter, quotes, removeHeaders } from './html-tags-three';
+// import { filter, quotes, removeHeaders } from './html-tags-three';
 
-let dom;
+// let dom;
 
-const dom1 = make();
-const dom2 = append(dom1, node('h1', 'scheme'));
-const dom3 = append(dom2, node('p', 'is a lisp'));
+// const dom1 = make();
+// const dom2 = append(dom1, node('h1', 'scheme'));
+// const dom3 = append(dom2, node('p', 'is a lisp'));
 
-const dom4 = append(dom3, node('h1', 'haskell'));
-const dom5 = append(dom4, node('p', 'is a functional language'));
+// const dom4 = append(dom3, node('h1', 'haskell'));
+// const dom5 = append(dom4, node('p', 'is a functional language'));
 
-const dom6 = append(dom5, node('h1', 'prolog'));
-dom = append(dom6, node('p', 'is about logic'));
+// const dom6 = append(dom5, node('h1', 'prolog'));
+// dom = append(dom6, node('p', 'is about logic'));
 
 // // #removeHeaders
 // const processedDom = removeHeaders(dom);
@@ -426,8 +426,29 @@ dom = append(dom6, node('p', 'is about logic'));
 // console.log(htmlToString(make()))
 // //.toBe('');
 
-// // #quotes
-const dom99 = append(dom, node('blockquote', 'live is life'));
-const dom88 = append(dom99, node('blockquote', 'i am sexy, and i know it'));
+// // // #quotes
+// const dom99 = append(dom, node('blockquote', 'live is life'));
+// const dom88 = append(dom99, node('blockquote', 'i am sexy, and i know it'));
 
-console.log(listToString(quotes(dom88)))// .toBe(listToString(l('i am sexy, and i know it', 'live is life')));
+// console.log(listToString(quotes(dom88)))// .toBe(listToString(l('i am sexy, and i know it', 'live is life')));
+
+import { make, append, node, getValue, is, } from 'hexlet-html-tags';
+
+import { reduce, emptyTagsCount, headersCount } from './html-tags-four';
+
+// const html1 = append(make(), node('h1', 'header1'));
+// const html2 = append(html1, node('h1', 'header2'));
+// const html3 = append(html2, node('p', 'content'));
+// console.log(reduce((element, acc) => {
+//     return is('h1', element) ? acc + 1 : acc;
+// }, 0, html3)); // 2
+
+const html1 = make();
+const html2 = append(html1, node('h1', 'scheme'));
+const html3 = append(html2, node('p', 'is a lisp'));
+const html4 = append(html3, node('blockquote', ''));
+const html5 = append(html4, node('blockquote', ''));
+const html6 = append(html5, node('blockquote', 'quote'));
+
+console.log(emptyTagsCount('blockquote', html6));
+// 2
