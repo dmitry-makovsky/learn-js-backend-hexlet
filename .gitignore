@@ -59,3 +59,15 @@ typings/
 
 # next.js build output
 .next
+
+# Old folder with deprecated code
+old/
+
+# vscode settings
+.vscode
+
+# Compiled sources directory
+dist/
+
+# Exclude example file
+example.js

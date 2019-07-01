@@ -1,1 +1,0 @@
-export default (fn, arg2) => (arg) => fn(arg, arg2)

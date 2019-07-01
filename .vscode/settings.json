@@ -1,7 +1,0 @@
-{
-    "code-runner.executorMap": {
-        "javascript": "babel-node"
-    },
-    "code-runner.runInTerminal": true,
-    "code-runner.customCommand": "babel-node test.js"
-}
