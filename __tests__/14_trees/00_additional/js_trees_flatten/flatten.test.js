@@ -1,0 +1,28 @@
+/* eslint-disable no-undef */
+import flatten from '../../../../src/14_trees/00_additional/js_trees_flatten/flatten';
+
+describe('Flatten', () => {
+  it('set 1', () => {
+    const list = [];
+
+    expect(flatten(list)).toEqual([]);
+  });
+
+  it('set 2', () => {
+    const list = [1, 2, [3, 5], [[4, 3], 2]];
+
+    expect(flatten(list)).toEqual([1, 2, 3, 5, 4, 3, 2]);
+  });
+
+  it('set 3', () => {
+    const list = [[1, [5], [], [[-3, 'hi']]], 'string', 10, [[[5]]]];
+
+    expect(flatten(list)).toEqual([1, 5, -3, 'hi', 'string', 10, 5]);
+  });
+
+  it('set 4', () => {
+    const list = [1, 2, { a: 1 }, [3, 5], 2];
+
+    expect(flatten(list)).toEqual([1, 2, { a: 1 }, 3, 5, 2]);
+  });
+});
